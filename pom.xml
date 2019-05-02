@@ -13,5 +13,29 @@
         <module>java-concurrency-parent</module>
     </modules>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.rsltr.concurrency</groupId>
+                <artifactId>java-concurrency-chapter-one</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rsltr.concurrency</groupId>
+                <artifactId>java-concurrency-chapter-two</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rsltr.concurrency</groupId>
+                <artifactId>java-concurrency-utils</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>
