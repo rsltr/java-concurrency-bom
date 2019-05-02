@@ -10,6 +10,62 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>java-concurrency-parent</artifactId>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>java-concurrency-chapter-two</module>
+        <module>java-concurrency-chapter-one</module>
+        <module>java-concurrency-utils</module>
+    </modules>
+
+    <properties>
+        <!-- plugins version -->
+        <maven.comiler.plugin.version>3.8.0</maven.comiler.plugin.version>
+        <!-- plugins properties -->
+        <compiler.target>9</compiler.target>
+        <compiler.source>9</compiler.source>
+        <!-- dependencies version -->
+        <lombok.version>1.16.22</lombok.version>
+        <junit.5.engine.version>5.4.0</junit.5.engine.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.5.engine.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.comiler.plugin.version}</version>
+                    <configuration>
+                        <target>${compiler.target}</target>
+                        <source>${compiler.source}</source>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+    </build>
 
 </project>
